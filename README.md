@@ -1,0 +1,1 @@
+## Simple Hotel Booking Webpage developed with Tailwindcss and Alpinejs
