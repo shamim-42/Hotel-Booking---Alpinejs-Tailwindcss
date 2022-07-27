@@ -5,21 +5,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const carousel = () => {
+            return {
+                selected: 0,
+                images: [
+                    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+                    "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1485160497022-3e09382fb310?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1472791108553-c9405341e398?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2137&q=80"
+                ]
+            };
+        };
+    </script>
 </head>
 
 <body class=" theme-cyan-blueGrey">
-    <section class="container mx-auto mt-8 bg-slate-100 p-16 rounded-3xl">
+    <section class="container mx-auto mt-8 p-16">
+        <div class="nc-SectionHowItWork  " data-nc-id="SectionHowItWork">
+            <div
+                class="nc-Section-Heading relative flex flex-col sm:flex-row sm:items-end justify-between mb-12 lg:mb-16 text-neutral-900 dark:text-neutral-50">
+                <div class="text-center w-full max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-semibold">How it work</h2><span
+                        class="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">Keep
+                        calm &amp; travel on</span>
+                </div>
+            </div>
+            <div class="mt-20 relative grid md:grid-cols-3 gap-20">
+                <span class="hidden md:block absolute inset-x-0 top-10">
+                    <svg width="1431" height="105" viewBox="0 0 1431 105" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M1 36.2274C308.531 219.886 521.943 -34.9837 778.073 28.7069C1105.98 110.245 1222.39 65.914 1430 1"
+                            stroke="#9CA3AF" stroke-linecap="round" stroke-dasharray="6 14" />
+                    </svg>
+                </span>
+                <div class="relative flex flex-col items-center max-w-xs mx-auto">
+                    <div class="nc-NcImage dark:hidden block mb-8 max-w-[200px] mx-auto" data-nc-id="NcImage"><img
+                            src="./images/hiw-1.png" class="object-cover w-full h-full" alt="nc-imgs"></div>
+                    <div class="nc-NcImage hidden dark:block mb-8 max-w-[200px] mx-auto" data-nc-id="NcImage">
+                        <div
+                            class="object-cover w-full h-full flex items-center justify-center bg-neutral-200 dark:bg-neutral-6000 text-neutral-100 dark:text-neutral-500">
+                            <div class="h-2/4 max-w-[50%]"><svg class="w-full h-full" viewBox="0 0 197 193" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M145.828 48.9822C134.953 48.9822 126.105 57.8301 126.105 68.7051C126.105 79.5801 134.953 88.428 145.828 88.428C156.703 88.428 165.551 79.5805 165.551 68.7051C165.551 57.8293 156.704 48.9822 145.828 48.9822ZM145.828 80.7741C139.173 80.7741 133.759 75.3602 133.759 68.7051C133.759 62.0501 139.173 56.6361 145.828 56.6361C152.483 56.6361 157.897 62.0501 157.897 68.7051C157.897 75.3594 152.483 80.7741 145.828 80.7741Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M145.963 171.49C145.867 171.256 145.748 171.034 145.611 170.828C145.473 170.617 145.312 170.422 145.136 170.246C144.96 170.07 144.765 169.909 144.554 169.771C144.348 169.634 144.126 169.515 143.892 169.419C143.663 169.324 143.422 169.247 143.177 169.201C142.683 169.102 142.178 169.102 141.684 169.201C141.439 169.247 141.198 169.324 140.969 169.419C140.735 169.515 140.513 169.634 140.306 169.771C140.096 169.909 139.901 170.07 139.725 170.246C139.549 170.422 139.388 170.617 139.25 170.828C139.112 171.034 138.994 171.256 138.898 171.49C138.802 171.719 138.726 171.96 138.68 172.205C138.63 172.45 138.603 172.703 138.603 172.952C138.603 173.2 138.63 173.453 138.68 173.698C138.726 173.943 138.802 174.184 138.898 174.413C138.994 174.647 139.112 174.869 139.25 175.075C139.388 175.286 139.549 175.481 139.725 175.657C139.812 175.745 139.905 175.829 140.001 175.908C140.099 175.987 140.201 176.063 140.306 176.132C140.513 176.269 140.735 176.388 140.969 176.484C141.198 176.579 141.439 176.656 141.684 176.702C141.929 176.752 142.182 176.778 142.43 176.778C142.679 176.778 142.932 176.752 143.177 176.702C143.422 176.656 143.663 176.579 143.892 176.484C144.126 176.388 144.348 176.269 144.554 176.132C144.66 176.062 144.762 175.987 144.859 175.908C144.956 175.829 145.048 175.745 145.136 175.657C145.312 175.481 145.473 175.286 145.611 175.075C145.748 174.869 145.867 174.647 145.963 174.413C146.058 174.184 146.135 173.943 146.185 173.698C146.234 173.453 146.257 173.2 146.257 172.952C146.257 172.703 146.234 172.45 146.185 172.205C146.135 171.96 146.058 171.719 145.963 171.49Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M85.7341 20.0459C85.6384 19.8163 85.5198 19.5943 85.382 19.3838C85.2442 19.1772 85.0835 18.9782 84.9075 18.8021C84.7314 18.6261 84.5363 18.4653 84.3258 18.3276C84.1191 18.1898 83.8972 18.0712 83.6637 17.9755C83.4341 17.8798 83.193 17.8071 82.9481 17.7574C82.4544 17.6579 81.9492 17.6579 81.4556 17.7574C81.2106 17.8071 80.9695 17.8798 80.7361 17.9755C80.5065 18.0712 80.2845 18.1898 80.0779 18.3276C79.8674 18.4653 79.6722 18.6261 79.4962 18.8021C79.3201 18.9782 79.1594 19.1772 79.0178 19.3838C78.88 19.5943 78.7652 19.8163 78.6696 20.0459C78.5739 20.2755 78.4973 20.5166 78.4514 20.7615C78.4017 21.0103 78.3749 21.259 78.3749 21.5116C78.3749 21.7603 78.4017 22.0091 78.4514 22.2579C78.4973 22.5028 78.5739 22.7439 78.6696 22.9735C78.7652 23.2031 78.88 23.4251 79.0178 23.6356C79.1594 23.8422 79.3201 24.0412 79.4962 24.2172C79.6722 24.3933 79.8674 24.554 80.0779 24.6918C80.2845 24.8296 80.5065 24.9482 80.7361 25.0439C80.9695 25.1395 81.2106 25.2123 81.4556 25.262C81.7005 25.3118 81.9531 25.3385 82.2018 25.3385C82.4506 25.3385 82.7032 25.3118 82.9481 25.262C83.193 25.2123 83.4341 25.1395 83.6637 25.0439C83.8972 24.9482 84.1191 24.8296 84.3258 24.6918C84.5363 24.554 84.7314 24.3933 84.9075 24.2172C85.0835 24.0412 85.2442 23.8422 85.382 23.6356C85.5198 23.4251 85.6384 23.2031 85.7341 22.9735C85.8298 22.7439 85.9063 22.5028 85.9522 22.2579C86.002 22.0091 86.0288 21.7603 86.0288 21.5116C86.0288 21.259 86.002 21.0103 85.9522 20.7615C85.9063 20.5166 85.8298 20.2755 85.7341 20.0459Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M175.008 17.6988C172.714 7.99787 163.987 0.755371 153.594 0.755371H33.522C15.2866 0.754988 0.450684 15.5909 0.450684 33.8263V153.899C0.450684 165.824 9.98628 175.557 21.8326 175.891C24.1272 185.592 32.8542 192.835 43.2467 192.835H174.382C186.517 192.835 196.39 182.962 196.39 170.826V141.949V39.6911C196.39 27.7663 186.855 18.0329 175.008 17.6988ZM188.736 170.827C188.736 178.742 182.297 185.182 174.382 185.182H43.2467C37.1197 185.182 31.8799 181.322 29.8236 175.908C29.2232 174.327 28.8918 172.615 28.8918 170.827V168.254V150.524L72.7964 76.0808C74.1332 73.8144 76.517 72.4911 79.1323 72.5332C81.7633 72.5783 84.0851 73.9844 85.3434 76.2955L104.247 111.007L131.725 161.462C132.419 162.737 133.733 163.459 135.089 163.459C135.708 163.459 136.335 163.309 136.916 162.993C138.772 161.982 139.458 159.657 138.447 157.801L129.53 141.428C133.445 141.608 137.296 140.341 140.362 137.797L157.572 123.52C160.332 121.23 164.408 121.331 167.051 123.755L167.95 124.578L175.604 131.594L188.736 143.632V170.827ZM188.736 133.249L175.603 121.21L167.95 115.382C162.963 113.297 157.033 114.022 152.685 117.629L135.475 131.906C133.582 133.476 131.111 134.111 128.695 133.646C126.28 133.183 124.22 131.677 123.043 129.517L110.969 107.345L104.226 94.9648V94.9644L92.0655 72.6342C89.4716 67.8716 84.6856 64.9727 79.2632 64.8801C73.8423 64.7951 68.9588 67.521 66.2037 72.1922L28.8914 135.457V39.6911C28.8914 31.7758 35.331 25.3362 43.2463 25.3362H66.8937C69.0074 25.3362 70.7207 23.6229 70.7207 21.5093C70.7207 19.3957 69.0074 17.6823 66.8937 17.6823H43.2463C31.1106 17.6823 21.2375 27.5555 21.2375 39.6911V149.479V168.198C13.8924 167.575 8.10458 161.402 8.10458 153.899V33.8263C8.10458 19.8109 19.507 8.40888 33.522 8.40888H153.594C159.721 8.40888 164.961 12.2684 167.017 17.6827H97.5093C95.3957 17.6827 93.6824 19.396 93.6824 21.5097C93.6824 23.6233 95.3957 25.3366 97.5093 25.3366H167.949L175.603 25.3925C182.949 26.0147 188.736 32.1876 188.736 39.6911V133.249Z"
+                                        fill="currentColor"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-auto">
+                        <h3 class="text-xl font-semibold">Smart search</h3><span
+                            class="block mt-5 text-neutral-500 dark:text-neutral-400">Name the area or type of home you
+                            are looking for the search bar. Our app will find you the perfect match.</span>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center max-w-xs mx-auto">
+                    <div class="nc-NcImage dark:hidden block mb-8 max-w-[200px] mx-auto" data-nc-id="NcImage"><img
+                            src="./images/hiw-2.png" class="object-cover w-full h-full" alt="nc-imgs"></div>
+                    <div class="nc-NcImage hidden dark:block mb-8 max-w-[200px] mx-auto" data-nc-id="NcImage">
+                        <div
+                            class="object-cover w-full h-full flex items-center justify-center bg-neutral-200 dark:bg-neutral-6000 text-neutral-100 dark:text-neutral-500">
+                            <div class="h-2/4 max-w-[50%]"><svg class="w-full h-full" viewBox="0 0 197 193" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M145.828 48.9822C134.953 48.9822 126.105 57.8301 126.105 68.7051C126.105 79.5801 134.953 88.428 145.828 88.428C156.703 88.428 165.551 79.5805 165.551 68.7051C165.551 57.8293 156.704 48.9822 145.828 48.9822ZM145.828 80.7741C139.173 80.7741 133.759 75.3602 133.759 68.7051C133.759 62.0501 139.173 56.6361 145.828 56.6361C152.483 56.6361 157.897 62.0501 157.897 68.7051C157.897 75.3594 152.483 80.7741 145.828 80.7741Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M145.963 171.49C145.867 171.256 145.748 171.034 145.611 170.828C145.473 170.617 145.312 170.422 145.136 170.246C144.96 170.07 144.765 169.909 144.554 169.771C144.348 169.634 144.126 169.515 143.892 169.419C143.663 169.324 143.422 169.247 143.177 169.201C142.683 169.102 142.178 169.102 141.684 169.201C141.439 169.247 141.198 169.324 140.969 169.419C140.735 169.515 140.513 169.634 140.306 169.771C140.096 169.909 139.901 170.07 139.725 170.246C139.549 170.422 139.388 170.617 139.25 170.828C139.112 171.034 138.994 171.256 138.898 171.49C138.802 171.719 138.726 171.96 138.68 172.205C138.63 172.45 138.603 172.703 138.603 172.952C138.603 173.2 138.63 173.453 138.68 173.698C138.726 173.943 138.802 174.184 138.898 174.413C138.994 174.647 139.112 174.869 139.25 175.075C139.388 175.286 139.549 175.481 139.725 175.657C139.812 175.745 139.905 175.829 140.001 175.908C140.099 175.987 140.201 176.063 140.306 176.132C140.513 176.269 140.735 176.388 140.969 176.484C141.198 176.579 141.439 176.656 141.684 176.702C141.929 176.752 142.182 176.778 142.43 176.778C142.679 176.778 142.932 176.752 143.177 176.702C143.422 176.656 143.663 176.579 143.892 176.484C144.126 176.388 144.348 176.269 144.554 176.132C144.66 176.062 144.762 175.987 144.859 175.908C144.956 175.829 145.048 175.745 145.136 175.657C145.312 175.481 145.473 175.286 145.611 175.075C145.748 174.869 145.867 174.647 145.963 174.413C146.058 174.184 146.135 173.943 146.185 173.698C146.234 173.453 146.257 173.2 146.257 172.952C146.257 172.703 146.234 172.45 146.185 172.205C146.135 171.96 146.058 171.719 145.963 171.49Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M85.7341 20.0459C85.6384 19.8163 85.5198 19.5943 85.382 19.3838C85.2442 19.1772 85.0835 18.9782 84.9075 18.8021C84.7314 18.6261 84.5363 18.4653 84.3258 18.3276C84.1191 18.1898 83.8972 18.0712 83.6637 17.9755C83.4341 17.8798 83.193 17.8071 82.9481 17.7574C82.4544 17.6579 81.9492 17.6579 81.4556 17.7574C81.2106 17.8071 80.9695 17.8798 80.7361 17.9755C80.5065 18.0712 80.2845 18.1898 80.0779 18.3276C79.8674 18.4653 79.6722 18.6261 79.4962 18.8021C79.3201 18.9782 79.1594 19.1772 79.0178 19.3838C78.88 19.5943 78.7652 19.8163 78.6696 20.0459C78.5739 20.2755 78.4973 20.5166 78.4514 20.7615C78.4017 21.0103 78.3749 21.259 78.3749 21.5116C78.3749 21.7603 78.4017 22.0091 78.4514 22.2579C78.4973 22.5028 78.5739 22.7439 78.6696 22.9735C78.7652 23.2031 78.88 23.4251 79.0178 23.6356C79.1594 23.8422 79.3201 24.0412 79.4962 24.2172C79.6722 24.3933 79.8674 24.554 80.0779 24.6918C80.2845 24.8296 80.5065 24.9482 80.7361 25.0439C80.9695 25.1395 81.2106 25.2123 81.4556 25.262C81.7005 25.3118 81.9531 25.3385 82.2018 25.3385C82.4506 25.3385 82.7032 25.3118 82.9481 25.262C83.193 25.2123 83.4341 25.1395 83.6637 25.0439C83.8972 24.9482 84.1191 24.8296 84.3258 24.6918C84.5363 24.554 84.7314 24.3933 84.9075 24.2172C85.0835 24.0412 85.2442 23.8422 85.382 23.6356C85.5198 23.4251 85.6384 23.2031 85.7341 22.9735C85.8298 22.7439 85.9063 22.5028 85.9522 22.2579C86.002 22.0091 86.0288 21.7603 86.0288 21.5116C86.0288 21.259 86.002 21.0103 85.9522 20.7615C85.9063 20.5166 85.8298 20.2755 85.7341 20.0459Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M175.008 17.6988C172.714 7.99787 163.987 0.755371 153.594 0.755371H33.522C15.2866 0.754988 0.450684 15.5909 0.450684 33.8263V153.899C0.450684 165.824 9.98628 175.557 21.8326 175.891C24.1272 185.592 32.8542 192.835 43.2467 192.835H174.382C186.517 192.835 196.39 182.962 196.39 170.826V141.949V39.6911C196.39 27.7663 186.855 18.0329 175.008 17.6988ZM188.736 170.827C188.736 178.742 182.297 185.182 174.382 185.182H43.2467C37.1197 185.182 31.8799 181.322 29.8236 175.908C29.2232 174.327 28.8918 172.615 28.8918 170.827V168.254V150.524L72.7964 76.0808C74.1332 73.8144 76.517 72.4911 79.1323 72.5332C81.7633 72.5783 84.0851 73.9844 85.3434 76.2955L104.247 111.007L131.725 161.462C132.419 162.737 133.733 163.459 135.089 163.459C135.708 163.459 136.335 163.309 136.916 162.993C138.772 161.982 139.458 159.657 138.447 157.801L129.53 141.428C133.445 141.608 137.296 140.341 140.362 137.797L157.572 123.52C160.332 121.23 164.408 121.331 167.051 123.755L167.95 124.578L175.604 131.594L188.736 143.632V170.827ZM188.736 133.249L175.603 121.21L167.95 115.382C162.963 113.297 157.033 114.022 152.685 117.629L135.475 131.906C133.582 133.476 131.111 134.111 128.695 133.646C126.28 133.183 124.22 131.677 123.043 129.517L110.969 107.345L104.226 94.9648V94.9644L92.0655 72.6342C89.4716 67.8716 84.6856 64.9727 79.2632 64.8801C73.8423 64.7951 68.9588 67.521 66.2037 72.1922L28.8914 135.457V39.6911C28.8914 31.7758 35.331 25.3362 43.2463 25.3362H66.8937C69.0074 25.3362 70.7207 23.6229 70.7207 21.5093C70.7207 19.3957 69.0074 17.6823 66.8937 17.6823H43.2463C31.1106 17.6823 21.2375 27.5555 21.2375 39.6911V149.479V168.198C13.8924 167.575 8.10458 161.402 8.10458 153.899V33.8263C8.10458 19.8109 19.507 8.40888 33.522 8.40888H153.594C159.721 8.40888 164.961 12.2684 167.017 17.6827H97.5093C95.3957 17.6827 93.6824 19.396 93.6824 21.5097C93.6824 23.6233 95.3957 25.3366 97.5093 25.3366H167.949L175.603 25.3925C182.949 26.0147 188.736 32.1876 188.736 39.6911V133.249Z"
+                                        fill="currentColor"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-auto">
+                        <h3 class="text-xl font-semibold">Choose property</h3><span
+                            class="block mt-5 text-neutral-500 dark:text-neutral-400">From the number of options our app
+                            will provide, you can select any property that you like to explore.</span>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center max-w-xs mx-auto">
+                    <div class="dark:hidden block mb-8 max-w-[200px] mx-auto"><img src="./images/hiw-3.png"
+                            class="object-cover w-full h-full" alt="simple-imgs"></div>
+                    <div class="hidden dark:block mb-8 max-w-[200px] mx-auto">
+                        <div
+                            class="object-cover w-full h-full flex items-center justify-center bg-neutral-200 dark:bg-neutral-6000 text-neutral-100 dark:text-neutral-500">
+                            <div class="h-2/4 max-w-[50%]"><svg class="w-full h-full" viewBox="0 0 197 193" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M145.828 48.9822C134.953 48.9822 126.105 57.8301 126.105 68.7051C126.105 79.5801 134.953 88.428 145.828 88.428C156.703 88.428 165.551 79.5805 165.551 68.7051C165.551 57.8293 156.704 48.9822 145.828 48.9822ZM145.828 80.7741C139.173 80.7741 133.759 75.3602 133.759 68.7051C133.759 62.0501 139.173 56.6361 145.828 56.6361C152.483 56.6361 157.897 62.0501 157.897 68.7051C157.897 75.3594 152.483 80.7741 145.828 80.7741Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M145.963 171.49C145.867 171.256 145.748 171.034 145.611 170.828C145.473 170.617 145.312 170.422 145.136 170.246C144.96 170.07 144.765 169.909 144.554 169.771C144.348 169.634 144.126 169.515 143.892 169.419C143.663 169.324 143.422 169.247 143.177 169.201C142.683 169.102 142.178 169.102 141.684 169.201C141.439 169.247 141.198 169.324 140.969 169.419C140.735 169.515 140.513 169.634 140.306 169.771C140.096 169.909 139.901 170.07 139.725 170.246C139.549 170.422 139.388 170.617 139.25 170.828C139.112 171.034 138.994 171.256 138.898 171.49C138.802 171.719 138.726 171.96 138.68 172.205C138.63 172.45 138.603 172.703 138.603 172.952C138.603 173.2 138.63 173.453 138.68 173.698C138.726 173.943 138.802 174.184 138.898 174.413C138.994 174.647 139.112 174.869 139.25 175.075C139.388 175.286 139.549 175.481 139.725 175.657C139.812 175.745 139.905 175.829 140.001 175.908C140.099 175.987 140.201 176.063 140.306 176.132C140.513 176.269 140.735 176.388 140.969 176.484C141.198 176.579 141.439 176.656 141.684 176.702C141.929 176.752 142.182 176.778 142.43 176.778C142.679 176.778 142.932 176.752 143.177 176.702C143.422 176.656 143.663 176.579 143.892 176.484C144.126 176.388 144.348 176.269 144.554 176.132C144.66 176.062 144.762 175.987 144.859 175.908C144.956 175.829 145.048 175.745 145.136 175.657C145.312 175.481 145.473 175.286 145.611 175.075C145.748 174.869 145.867 174.647 145.963 174.413C146.058 174.184 146.135 173.943 146.185 173.698C146.234 173.453 146.257 173.2 146.257 172.952C146.257 172.703 146.234 172.45 146.185 172.205C146.135 171.96 146.058 171.719 145.963 171.49Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M85.7341 20.0459C85.6384 19.8163 85.5198 19.5943 85.382 19.3838C85.2442 19.1772 85.0835 18.9782 84.9075 18.8021C84.7314 18.6261 84.5363 18.4653 84.3258 18.3276C84.1191 18.1898 83.8972 18.0712 83.6637 17.9755C83.4341 17.8798 83.193 17.8071 82.9481 17.7574C82.4544 17.6579 81.9492 17.6579 81.4556 17.7574C81.2106 17.8071 80.9695 17.8798 80.7361 17.9755C80.5065 18.0712 80.2845 18.1898 80.0779 18.3276C79.8674 18.4653 79.6722 18.6261 79.4962 18.8021C79.3201 18.9782 79.1594 19.1772 79.0178 19.3838C78.88 19.5943 78.7652 19.8163 78.6696 20.0459C78.5739 20.2755 78.4973 20.5166 78.4514 20.7615C78.4017 21.0103 78.3749 21.259 78.3749 21.5116C78.3749 21.7603 78.4017 22.0091 78.4514 22.2579C78.4973 22.5028 78.5739 22.7439 78.6696 22.9735C78.7652 23.2031 78.88 23.4251 79.0178 23.6356C79.1594 23.8422 79.3201 24.0412 79.4962 24.2172C79.6722 24.3933 79.8674 24.554 80.0779 24.6918C80.2845 24.8296 80.5065 24.9482 80.7361 25.0439C80.9695 25.1395 81.2106 25.2123 81.4556 25.262C81.7005 25.3118 81.9531 25.3385 82.2018 25.3385C82.4506 25.3385 82.7032 25.3118 82.9481 25.262C83.193 25.2123 83.4341 25.1395 83.6637 25.0439C83.8972 24.9482 84.1191 24.8296 84.3258 24.6918C84.5363 24.554 84.7314 24.3933 84.9075 24.2172C85.0835 24.0412 85.2442 23.8422 85.382 23.6356C85.5198 23.4251 85.6384 23.2031 85.7341 22.9735C85.8298 22.7439 85.9063 22.5028 85.9522 22.2579C86.002 22.0091 86.0288 21.7603 86.0288 21.5116C86.0288 21.259 86.002 21.0103 85.9522 20.7615C85.9063 20.5166 85.8298 20.2755 85.7341 20.0459Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M175.008 17.6988C172.714 7.99787 163.987 0.755371 153.594 0.755371H33.522C15.2866 0.754988 0.450684 15.5909 0.450684 33.8263V153.899C0.450684 165.824 9.98628 175.557 21.8326 175.891C24.1272 185.592 32.8542 192.835 43.2467 192.835H174.382C186.517 192.835 196.39 182.962 196.39 170.826V141.949V39.6911C196.39 27.7663 186.855 18.0329 175.008 17.6988ZM188.736 170.827C188.736 178.742 182.297 185.182 174.382 185.182H43.2467C37.1197 185.182 31.8799 181.322 29.8236 175.908C29.2232 174.327 28.8918 172.615 28.8918 170.827V168.254V150.524L72.7964 76.0808C74.1332 73.8144 76.517 72.4911 79.1323 72.5332C81.7633 72.5783 84.0851 73.9844 85.3434 76.2955L104.247 111.007L131.725 161.462C132.419 162.737 133.733 163.459 135.089 163.459C135.708 163.459 136.335 163.309 136.916 162.993C138.772 161.982 139.458 159.657 138.447 157.801L129.53 141.428C133.445 141.608 137.296 140.341 140.362 137.797L157.572 123.52C160.332 121.23 164.408 121.331 167.051 123.755L167.95 124.578L175.604 131.594L188.736 143.632V170.827ZM188.736 133.249L175.603 121.21L167.95 115.382C162.963 113.297 157.033 114.022 152.685 117.629L135.475 131.906C133.582 133.476 131.111 134.111 128.695 133.646C126.28 133.183 124.22 131.677 123.043 129.517L110.969 107.345L104.226 94.9648V94.9644L92.0655 72.6342C89.4716 67.8716 84.6856 64.9727 79.2632 64.8801C73.8423 64.7951 68.9588 67.521 66.2037 72.1922L28.8914 135.457V39.6911C28.8914 31.7758 35.331 25.3362 43.2463 25.3362H66.8937C69.0074 25.3362 70.7207 23.6229 70.7207 21.5093C70.7207 19.3957 69.0074 17.6823 66.8937 17.6823H43.2463C31.1106 17.6823 21.2375 27.5555 21.2375 39.6911V149.479V168.198C13.8924 167.575 8.10458 161.402 8.10458 153.899V33.8263C8.10458 19.8109 19.507 8.40888 33.522 8.40888H153.594C159.721 8.40888 164.961 12.2684 167.017 17.6827H97.5093C95.3957 17.6827 93.6824 19.396 93.6824 21.5097C93.6824 23.6233 95.3957 25.3366 97.5093 25.3366H167.949L175.603 25.3925C182.949 26.0147 188.736 32.1876 188.736 39.6911V133.249Z"
+                                        fill="currentColor"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-auto">
+                        <h3 class="text-xl font-semibold">Book you property</h3><span
+                            class="block mt-5 text-neutral-500 dark:text-neutral-400">Find a home or space from our
+                            search bar. Enter your specific location, property type and price range.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto mt-8 bg-slate-100 p-8 py-14 md:px-14 lg:px-22 rounded-3xl">
         <div class="columns-1">
-            <h1 class="font-semibold text-5xl">Featured places to stay</h1>
-            <h1 class="font-normal text-2xl mt-6 pl-1 text-slate-500">Popular places to stay that Chisfis recommends for
+            <h1 class="font-semibold text-4xl">Featured places to stay</h1>
+            <h1 class="font-normal text-xl mt-6 pl-1 text-slate-500">Popular places to stay that Chisfis recommends for
                 you</h1>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 mt-8 gap-6">
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-12 md:col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
                     <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
@@ -147,12 +294,55 @@
             </div>
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/4186560/pexels-photo-4186560.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
+                    <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
+                        <div x-data="{is_loved: false}">
+                            <div @click="is_loved= ! is_loved"
+                                class="bg-stone-100 hover:bg-stone-200 hover:cursor-pointer p-2 rounded-full absolute top-2 right-1">
+                                <template x-if="is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(255,0,0,0.7)"
+                                        viewBox="0 0 24 24" stroke="rgba(255,0,0,0.7)" stroke-width="0">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                                <template x-if="! is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(0,0,0,0.01)"
+                                        viewBox="0 0 24 24" stroke="rgba(0,0,0,0.7)" stroke-width="1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+
                         <div class="pt-8">
                             <div class="flex flex-row gap-3">
                                 <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
@@ -238,7 +428,7 @@
                                     <span class="text-stone-400">(28)</span>
                                 </div>
                                 <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
+                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-1 text-cyan-500 rounded-md">
                                     <span class="align-baseline">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -257,12 +447,55 @@
             </div>
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/2290738/pexels-photo-2290738.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
+                    <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
+                        <div x-data="{is_loved: false}">
+                            <div @click="is_loved= ! is_loved"
+                                class="bg-stone-100 hover:bg-stone-200 hover:cursor-pointer p-2 rounded-full absolute top-2 right-1">
+                                <template x-if="is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(255,0,0,0.7)"
+                                        viewBox="0 0 24 24" stroke="rgba(255,0,0,0.7)" stroke-width="0">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                                <template x-if="! is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(0,0,0,0.01)"
+                                        viewBox="0 0 24 24" stroke="rgba(0,0,0,0.7)" stroke-width="1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+
                         <div class="pt-8">
                             <div class="flex flex-row gap-3">
                                 <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
@@ -348,7 +581,7 @@
                                     <span class="text-stone-400">(28)</span>
                                 </div>
                                 <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
+                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-1 text-cyan-500 rounded-md">
                                     <span class="align-baseline">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -367,12 +600,55 @@
             </div>
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
+                    <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
+                        <div x-data="{is_loved: false}">
+                            <div @click="is_loved= ! is_loved"
+                                class="bg-stone-100 hover:bg-stone-200 hover:cursor-pointer p-2 rounded-full absolute top-2 right-1">
+                                <template x-if="is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(255,0,0,0.7)"
+                                        viewBox="0 0 24 24" stroke="rgba(255,0,0,0.7)" stroke-width="0">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                                <template x-if="! is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(0,0,0,0.01)"
+                                        viewBox="0 0 24 24" stroke="rgba(0,0,0,0.7)" stroke-width="1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+
                         <div class="pt-8">
                             <div class="flex flex-row gap-3">
                                 <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
@@ -458,7 +734,7 @@
                                     <span class="text-stone-400">(28)</span>
                                 </div>
                                 <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
+                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-1 text-cyan-500 rounded-md">
                                     <span class="align-baseline">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -477,12 +753,55 @@
             </div>
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
+                    <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
+                        <div x-data="{is_loved: false}">
+                            <div @click="is_loved= ! is_loved"
+                                class="bg-stone-100 hover:bg-stone-200 hover:cursor-pointer p-2 rounded-full absolute top-2 right-1">
+                                <template x-if="is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(255,0,0,0.7)"
+                                        viewBox="0 0 24 24" stroke="rgba(255,0,0,0.7)" stroke-width="0">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                                <template x-if="! is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(0,0,0,0.01)"
+                                        viewBox="0 0 24 24" stroke="rgba(0,0,0,0.7)" stroke-width="1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+
                         <div class="pt-8">
                             <div class="flex flex-row gap-3">
                                 <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
@@ -568,7 +887,7 @@
                                     <span class="text-stone-400">(28)</span>
                                 </div>
                                 <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
+                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-1 text-cyan-500 rounded-md">
                                     <span class="align-baseline">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -587,12 +906,55 @@
             </div>
             <div class="bg-white rounded-xl p-4">
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+                    <div x-data="carousel()" class="relative col-span-12 md:col-span-5">
+                        <!-- <img class="w-full object-cover object-center aspect-square rounded-xl"
+                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> -->
+                        <img class="h-64 w-full rounded-md object-cover object-center" x-bind:src="images[selected]"
+                            alt="mountains" />
+
+
+                        <button x-on:click="selected = selected+1"
+                            class=" inset-y-0 left-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-amber-500">
+                                &larr;
+                            </span>
+                        </button>
+                        <button x-on:click="selected = selected-1"
+                            class="absolute inset-y-0 right-0 px-2 py-[25%] h-full w-8 group hover:bg-gray-500 hover:bg-opacity-75 cursor-pointer">
+                            <span class="hidden group-hover:block text-gray-50">
+                                &rarr;
+                            </span>
+                        </button>
+                        <div class="absolute bottom-0 w-full p-4 flex justify-center space-x-2">
+                            <template x-for="(image,index) in images" :key="index">
+                                <button @click="selected = index"
+                                    :class="{'bg-gray-300': selected == index, 'bg-gray-500': selected != index}"
+                                    class="h-2 w-2 rounded-full hover:bg-gray-300 ring-2 ring-gray-300"></button>
+                            </template>
+                        </div>
                     </div>
 
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
+                    <div class="col-span-12 md:col-span-7 text-sm px-8 align-baseline justify-between relative">
+                        <div x-data="{is_loved: false}">
+                            <div @click="is_loved= ! is_loved"
+                                class="bg-stone-100 hover:bg-stone-200 hover:cursor-pointer p-2 rounded-full absolute top-2 right-1">
+                                <template x-if="is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(255,0,0,0.7)"
+                                        viewBox="0 0 24 24" stroke="rgba(255,0,0,0.7)" stroke-width="0">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                                <template x-if="! is_loved">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="rgba(0,0,0,0.01)"
+                                        viewBox="0 0 24 24" stroke="rgba(0,0,0,0.7)" stroke-width="1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </template>
+                            </div>
+                        </div>
+
                         <div class="pt-8">
                             <div class="flex flex-row gap-3">
                                 <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
@@ -678,557 +1040,7 @@
                                     <span class="text-stone-400">(28)</span>
                                 </div>
                                 <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
-                                    <span class="align-baseline">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        26000
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl p-4">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    </div>
-
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
-                        <div class="pt-8">
-                            <div class="flex flex-row gap-3">
-                                <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto">4 Network</span>
-                                </div>
-
-                                <div class="flex flex-row p-1 px-2 bg-yellow-100 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="rgb(194 65 12)">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto text-orange-700">Family</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-start align-middle my-4">
-                                <span class="bg-lime-100 text-lime-700 rounded-xl p-1 px-2 font-medium">ADS</span>
-                                &nbsp;&nbsp;
-                                <h1 class="text-xl">One of Best Western Hotels </h1>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-stone-500 my-4">
-                                <div class="flex flex-row ">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>6 beds</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>3 baths</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>1200 Sq. Fit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="grid grid-cols-2 items-center h-1/3">
-                                <div class="flex flex-row gap-2 text-xl">
-                                    <span class="text-red-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="0">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </span>
-                                    <span>4.8</span>
-                                    <span class="text-stone-400">(28)</span>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
-                                    <span class="align-baseline">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        26000
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl p-4">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    </div>
-
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
-                        <div class="pt-8">
-                            <div class="flex flex-row gap-3">
-                                <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto">4 Network</span>
-                                </div>
-
-                                <div class="flex flex-row p-1 px-2 bg-yellow-100 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="rgb(194 65 12)">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto text-orange-700">Family</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-start align-middle my-4">
-                                <span class="bg-lime-100 text-lime-700 rounded-xl p-1 px-2 font-medium">ADS</span>
-                                &nbsp;&nbsp;
-                                <h1 class="text-xl">One of Best Western Hotels </h1>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-stone-500 my-4">
-                                <div class="flex flex-row ">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>6 beds</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>3 baths</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>1200 Sq. Fit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="grid grid-cols-2 items-center h-1/3">
-                                <div class="flex flex-row gap-2 text-xl">
-                                    <span class="text-red-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="0">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </span>
-                                    <span>4.8</span>
-                                    <span class="text-stone-400">(28)</span>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
-                                    <span class="align-baseline">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        26000
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl p-4">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    </div>
-
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
-                        <div class="pt-8">
-                            <div class="flex flex-row gap-3">
-                                <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto">4 Network</span>
-                                </div>
-
-                                <div class="flex flex-row p-1 px-2 bg-yellow-100 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="rgb(194 65 12)">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto text-orange-700">Family</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-start align-middle my-4">
-                                <span class="bg-lime-100 text-lime-700 rounded-xl p-1 px-2 font-medium">ADS</span>
-                                &nbsp;&nbsp;
-                                <h1 class="text-xl">One of Best Western Hotels </h1>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-stone-500 my-4">
-                                <div class="flex flex-row ">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>6 beds</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>3 baths</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>1200 Sq. Fit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="grid grid-cols-2 items-center h-1/3">
-                                <div class="flex flex-row gap-2 text-xl">
-                                    <span class="text-red-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="0">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </span>
-                                    <span>4.8</span>
-                                    <span class="text-stone-400">(28)</span>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
-                                    <span class="align-baseline">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        26000
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl p-4">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    </div>
-
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
-                        <div class="pt-8">
-                            <div class="flex flex-row gap-3">
-                                <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto">4 Network</span>
-                                </div>
-
-                                <div class="flex flex-row p-1 px-2 bg-yellow-100 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="rgb(194 65 12)">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto text-orange-700">Family</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-start align-middle my-4">
-                                <span class="bg-lime-100 text-lime-700 rounded-xl p-1 px-2 font-medium">ADS</span>
-                                &nbsp;&nbsp;
-                                <h1 class="text-xl">One of Best Western Hotels </h1>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-stone-500 my-4">
-                                <div class="flex flex-row ">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>6 beds</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>3 baths</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>1200 Sq. Fit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="grid grid-cols-2 items-center h-1/3">
-                                <div class="flex flex-row gap-2 text-xl">
-                                    <span class="text-red-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="0">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </span>
-                                    <span>4.8</span>
-                                    <span class="text-stone-400">(28)</span>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
-                                    <span class="align-baseline">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        26000
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white rounded-xl p-4">
-                <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <img class="aspect-square rounded-xl"
-                            src="https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-                    </div>
-
-                    <div class="col-span-7 text-sm px-8 align-baseline justify-between">
-                        <div class="pt-8">
-                            <div class="flex flex-row gap-3">
-                                <div class="flex flex-row  p-1 px-2 bg-blue-100 text-blue-700 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto">4 Network</span>
-                                </div>
-
-                                <div class="flex flex-row p-1 px-2 bg-yellow-100 font-medium rounded-xl">
-                                    <span class="basis-auto h-1/4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="rgb(194 65 12)">
-                                            <path fill-rule="evenodd"
-                                                d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span class="basis-auto text-orange-700">Family</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-start align-middle my-4">
-                                <span class="bg-lime-100 text-lime-700 rounded-xl p-1 px-2 font-medium">ADS</span>
-                                &nbsp;&nbsp;
-                                <h1 class="text-xl">One of Best Western Hotels </h1>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-stone-500 my-4">
-                                <div class="flex flex-row ">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>6 beds</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>3 baths</span>
-                                </div>
-                                <div class="flex flex-row">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    &nbsp;&nbsp;
-                                    <span>1200 Sq. Fit</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="grid grid-cols-2 items-center h-1/3">
-                                <div class="flex flex-row gap-2 text-xl">
-                                    <span class="text-red-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="0">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </span>
-                                    <span>4.8</span>
-                                    <span class="text-stone-400">(28)</span>
-                                </div>
-                                <div
-                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-2 text-cyan-500 rounded-md">
+                                    class="flex flex-row justify-center align-middle gap-2 text-2xl border-2 border-cyan-500 p-1 text-cyan-500 rounded-md">
                                     <span class="align-baseline">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1247,6 +1059,276 @@
             </div>
         </div>
     </section>
+    <section class="container mx-auto mt-8p-8 py-14 md:px-14 lg:px-22">
+        <div class="grid grid-cols-2 items-center">
+            <div class="max-w-2xl flex-shrink-0 mt-10 lg:mt-0"><span
+                    class="uppercase text-sm text-gray-400 tracking-widest">BENnefits</span>
+                <h2 class="font-semibold text-4xl mt-5">Happening cities </h2>
+                <ul class="space-y-10 mt-16">
+                    <li class="space-y-4">
+                        <span
+                            class="inline-flex px-2.5 py-1 rounded-full font-medium text-xs relative text-blue-800 bg-blue-100 ">
+                            Advertising
+                        </span>
+                        <span class="block text-xl font-semibold">Cost-effective advertising</span>
+                        <span class="block mt-5 text-neutral-500 dark:text-neutral-400">With a free listing, you can
+                            advertise your rental with no upfront costs
+                        </span>
+                    </li>
+                    <li class="space-y-4">
+                        <span
+                            class="nc-Badge inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-green-800 bg-green-100  relative">Exposure
+                        </span>
+                        <span class="block text-xl font-semibold">Reach millions with Chisfis
+
+                        </span>
+                        <span class="block mt-5 text-neutral-500 dark:text-neutral-400">Millions of people are searching
+                            for unique places to stay around the world
+                        </span>
+                    </li>
+                    <li class="space-y-4">
+                        <span
+                            class="nc-Badge inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-red-800 bg-red-100  relative">
+                            Secure
+                        </span>
+                        <span class="block text-xl font-semibold">Secure and simple
+                        </span>
+                        <span class="block mt-5 text-neutral-500 dark:text-neutral-400">
+                            A Holiday Lettings listing gives
+                            you a secure and easy way to take bookings and payments online
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative flex flex-col items-center lg:flex-row-reverse lg:py-14">
+                <img src="./images/happening-cities.png" class="object-cover w-full h-full" alt="happeing-imgs">
+            </div>
+
+        </div>
+    </section>
+    <section class="container mx-auto mt-8p-8 py-14 md:px-14 lg:px-22">
+        <div class="nc-SectionSliderNewCategories ">
+            <div class="flow-root glide--ltr glide--slider glide--swipeable">
+                <div
+                    class="relative flex flex-col sm:flex-row sm:items-end justify-between mb-12 lg:mb-16 text-neutral-900 dark:text-neutral-50">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-semibold">Explore by types of stays</h2><span
+                            class="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">Explore
+                            houses based on 10 types of stays</span>
+                    </div>
+                    <div class="mt-4 flex justify-end sm:ml-2 sm:mt-0 flex-shrink-0">
+                        <div class="nc-NextPrev relative flex items-center text-neutral-900 dark:text-neutral-300 "
+                            data-nc-id="NextPrev" data-glide-el="controls"><button
+                                class="w-10 h-10 mr-[6px] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
+                                title="Prev" data-glide-dir="<"><i class="las la-angle-left"></i></button><button
+                                class="w-10 h-10 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
+                                title="Next" data-glide-dir=">"><i class="las la-angle-right"></i></button></div>
+                    </div>
+                </div>
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides"
+                        style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1574.4px; transform: translate3d(0px, 0px, 0px);">
+                        <li class="glide__slide glide__slide--active" style="width: 230.4px; margin-right: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">17,288
+                                        properties</span>
+                                </div>
+                            </a></li>
+                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Wooden house</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">2,118
+                                        properties</span>
+                                </div>
+                            </a></li>
+                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Houseboat</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">36,612
+                                        properties</span>
+                                </div>
+                            </a></li>
+                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/248837/pexels-photo-248837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Farm House</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
+                                        properties</span>
+                                </div>
+                            </a></li>
+                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Dome House</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
+                                        properties</span>
+                                </div>
+                            </a></li>
+                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px;"><a
+                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
+                                href="/chisfis/listing-stay">
+                                <div
+                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
+                                    <div class="nc-NcImage " data-nc-id="NcImage"><img
+                                            src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Dome House</h2><span
+                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
+                                        properties</span>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto mt-8p-8 py-14 md:px-14 lg:px-22">
+        <div class="relative pb-0 pt-24 lg:py-32 xl:py-40 2xl:py-48">
+            <div class="absolute inset-y-0 w-screen xl:max-w-[1340px] 2xl:max-w-screen-2xl left-1/2 transform -translate-x-1/2 xl:rounded-[40px] z-0 bg-neutral-100 bg-opacity-80 dark:bg-opacity-100 ">
+                <img
+                    class="absolute inset-0 w-full h-full object-cover rounded-3xl object-right"
+                    src="./images/apps-download-bg.png" alt="dowloadAppPng">
+                <div
+                    class="hidden lg:block absolute right-0 bottom-0 max-w-xl xl:max-w-2xl rounded-3xl overflow-hidden">
+                    <img src="./images/apps-download-bg-phone-in-hand.png" alt=""></div>
+                <div class="absolute right-0 top-0 max-w-2xl"><img
+                        src="./static/media/appRightImgTree.52ec39fa72f9d8d16c19.png" alt=""></div>
+                <div class="absolute left-0 bottom-10 max-w-2xl"><img
+                        src="data:image/png;base64,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"
+                        alt=""></div>
+            </div>
+            <div class="relative inline-block ">
+                <h2 class="text-5xl md:text-6xl xl:text-7xl font-bold text-neutral-800">Mobile Apps</h2><span
+                    class="block mt-7 max-w-md text-neutral-6000">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed dapibus porttitor nisl, sit amet finibus libero.</span>
+                <div class="flex space-x-3 mt-10 sm:mt-14"><a href="##" target="_blank" rel="noopener noreferrer"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAA8CAYAAAA60Bs3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAByWSURBVHgB7V0HWJTX0p6FBQQFLNixghUEFBW7oCJYY8qNN8l/b6ImJjfXWGLsmmAvMVVjikQTTa6JJhpj7yJi72IXFQuKFQUUEdh/3oHF3WV3WZZdIHHfPIR1v3a+c+bMmXln5qAgDURERCh37t4dlvYorb9KpWrDX1XiHzuywYaSDIXiPqnouEKlWqxSZS6JiYlJ1jqs/jBo0KCGJ0+fiUxPT2/DAq4gG2z4C0KhUNxSqLL6RUdHr1F/Z4//DR8zpuH5s+fWpKam+pOG4Ntgw18QpVWk6FWndq0z8fHxp/CFAibK0eMnDt+8meib39U26TcC3c5RUcmFZltLcjuNIL9mq1SUaO/k0DV6y5ZjSntHl/Dbt2/5kCmws7MJuqko4o5SmfBYTcFQkAkXlGCoVFlGJV2hoMr05Mm/+OMI+8pVKs+4n5TUiEwA2ztkg3WBHv6LKtcihSmSqCKVt7+f3zy7hw8ftqESBEXubwVVrFiRvLzqUqHA61aeHytAQZZRijYBNw2m9ZOi0r0HqeFKZlMqUgmCo6MTBYcEU4/wMKpTty7duHGDBr79jnmDzwKtMiDUtlXp2YAq60kjZVZmVrHz4Gpxq+7pSaNGjqAAP7/cY3fu3CFLwxribdPAJRV2DsqS4nj4BwTQRxPGk0eFClrf37x5i2ywoTCwK85lW/3katWq0YSxY/MIOHDo8KFnRktayq43dO9nFcVqqkB4nZycaPToUVSpUl7XIOn+fdq2PYqeFTiVKkVu7u5kDThyP7vzvYtDqbm6ubGv5UjFBaW12AZTgO4OYSdT0wbXxPLlKygxMZGsBawgDRvUF19AaW9Pl69epevXEuhSfDwx60RFjR7du1HLlkE0avRosjR69u5Fgf4BNG3GDEpJSSFrQXcKleKJO2rECFq3fj3FxMRQcUBJxWiuYHp1aN9e77G4Cxdoya+/kjUR3jWU+vbtS0eOHqO79+5Rs2bNqEyZMpTIjM7cr+bR1WvXqCgBTVutWlWyBiqUr0BVqlQma0Pp4EDNAwPpeGysTCalUkmerEzQr8UFZXHyAm6ubtS4Ud441Nmz52j2p59SWloaWRN4cwj4+AkTODj2BA4Kla9Qnv777rs0c8Z0em/wELrHwq8+V6Fxne5nzYijseOa0DxHq1E6xw0c1nqevs/aF6rysflVEpt4+i/tZ+j7Xl87atWsSR+OH0f93hpIqTkrhopUuc/X7Rsq4HPMgVKVVXxCXrlyJbHJNXGYhW7evHl05uxZKho8fX9w6rdv3xEtvviHhdSlc2da+ttvcqxhwwYU3DGYyrq70YlTp2jb1m2UyiZNZza3EpkBimXNBVStWo2aNPGhHdE76dGjRzJwbdu2pZTUVErjfyPAdTH+EnXt0oXKlS1L26Ki6PDhI3r5fHd+Vtt27ahRw0Yy4Xfv3kUHDx2WY66sGVu1akX+/n6UlZVF0dHRdPjIUcrIyJDjNVjYOncKoQoeHrR33z7RsIaAxdzXtwm1adOWNX45OnLkCEVF7ZD3w/h0CgmhAwcOUGOfxtSqRUtK4JVu5cqVlJycnNt7+A2/KiQ4WOz/8LAwSki4xsRBdnvtlPbUqnUras99kZh4k9asXUu3c+hhezYV2/Cx5s2bUya3P2bXbjp6lN8lM5MsAas6ngqd33kebvdUdxw7HksRkybT0GHD6PSZM7kz39j1pjy7IFAPGLj50zzJ2rZtI45anz59aPbMmXSHJ8CePXvZzOlKn336CZVlIQX1+dorr7AQKeXa4OCONJJt0IAAf2lDGdcyNGL4cBHKJiyQ7703iCZFRLBgqsiBnbGZ06eLwOe2WZH9u0zp0jRp0iQK7RJKhw4dontJ92jqlCn0PLcFxzFZGjVqSDtjdtGFCxflWFhYV7lP1apV6duv51GdOnXoOPdrSMfs4Jqh1eSlF1+kaZOnUFJSEu3cGSPPmP/dd2xilCYHnhz933idpk6bRl06daZrLOBdQ7vQV3Pn8vjZad0HzqWYJTx2rnxthXLlyC5nffjHSy+J4OP60NBQmjlzhvQt7vHaa69Svzfe4Pc8zGbqRVkJDJmx5kBJVkKpUs7UoJ43leaXzszMoPjLV8TW1ezoc+fO0/MvvkTpbCpk8axVL2Vurq7UoEEDql+/Pjlxx8EhvMzO4Pnz5ymrCBxltOH69etUu1YtXm0qU//XX6c5rN03btwox48eO8aDPEcG+wQL0YAB/UWI791LoqbNmlLsiRPUgrXSnt17yLO6J79fOp08dZLcy5Wlqny/fuPGy7tggJ3ZMWvNWmzTli25z8cbdmMntJx7WRo8bKjcF216cP8BDR70X9q2bRtdvHiRvpwzJ9fE8G/Cmrh1a9qwYSMNfPNNVhrHKWLiRMJKvXnzZprME6tK1Sp53rVGDU96lSfpop9/pmXLlsndoH1/XryIunXrRuvXrZfzblxPoMlTpopZd5iPf/PVXPJt4ssa91juva5evcYaeo30y7Lfl8s1rmVc5X0uso81ddp0bk8WHeGV69OPZ/EK1ZAZtCR6gSfV0Pffp/hL8XIu+rJnz560dft2sgQsJuQyk50cKYy1XGde5v18fcXp0ASYkgMHD9Lqtet4kM/R47THsgw7ODpQterVRFO0bdOGvL28eAnLu8jcf/BAOnjR4p/ofNx5o8RQYacChPvx43Ty9fEhl9IuIjTqe4LaPM7/hrmAgfsvC6pXXS+6fuM6VWIN++WXc+j994ex2fU1BbUKEjMiKel+rkkCAZc28oDHX75MPvwMBw1zAv3WnJ3gY7HHRcDV7xMds5NGfjBcNPi+/Qeofbu21KFDBzYxylNNNk/u3L3LysVJlv4veAJk5ZiimaxALrMTXVWPkFfjSYiO3Mcmjfo5sKVh/vg38csVckwqCDhwFistZftUuv2t0vigaeMfYC2N98Xhc/z+KSmpssrVYkVSis2bf732mphdQPly5WUCWQrKwvKmamfC29tbHLZA1mSGAMHp0b07dQsPZyG9wLbiXhn8Fs0D2Y5tQqVdXIw+y5351uCOHWUi/L5iBUVGfk/p6ekWc1LU7+LCpkIVbutaHmAl25IQTrWtK73F/374+LE4qndZsM7woDfj937wwIuOsZaHQKSxPevNK5kf27or/lghK5VeqPLm0UDIYdem8yTTRMaT7DbY2dlT35dfppf/8ZL4DzBXej/Xm+1qH2mhs7Mzrx4ZWtfCNNTXT87OpeT7J+naz0pjBQQ7Wn1NhkrbdzEIAzm86pVarhdhzp4EDg5Kud9BNsk0b7uRVx9LwSIUYjvWKKM++EBsVFOAZbo+CwB+zAG03j95kLEURn7/vdjQlhJ0Bxaw1159VbRf9M6dYjplsAarycv67VvZKQZYsRrzUotVBdpn95494lyCE168eLFo+mOxJ8RxdXNzpRMnTmbfXE8jZWKptA9j4l68eIlq164l5syjHJbJz99fJtut27doQP/+tHLVKtqSY+Y4cZsgLLgH/IlGbO7hGL6DY1eRHVB9LA9WV0wKL1ZSCWyiZd/LiQIDm7EDuCtXVO1MlBOYR3hmKWcng0yQ5qROSLjOK+ZjZrmOymdrQFlY6YAGHj1ypGjZogaCJ0940MHGPDKTbiztUpr8ORgFoQZ9+Fzv3izQNcT+vHrlCtmz0O9iIX7n7bfZBJjL2voB/ePFF0T4165bl2PDHqE+zz1HpXkFOHDwUC7bMTHiI9byZ7VoSP3IPqIeely/bv06+oipzTfY6Vu3fgOVZ9ZjCNvjq1atFmGAIwrWBW2tyjx066AgWVVwj6VLl3F7B7L5dEP8AzAwXmwCgrnQFdU4XlHBBL311puUkpzC97hDL7MCQYrFHyv/NNJa/YDJBCapS0gn2ukYQ9cSruVco9J73blz5+gom37Dhg6lJb/8Srdu3ZS+vf8gmW38q2QJ2HvXqx+RrrNUGYLusurGgv3xrJmiJYoDoO7g6JxjXr0gkPfgHxcWcDAQMDV8mB6rVLESmxvHxQQ4z52PQYHAnWRNXIq1HdiBVi1biKM8PzKS4s7Hyf0g+GA0wHScPCVlhRII8eB+wWoA8wUA8+DI/sd2puekHfzjzCbao0dpQkG6stZPT3/C9vZ+us+rAWzXpszedOzQXiYihPHHRYuEmkRUtjELOZxWNzd32rBxg9i5WF1g8yenJFMXZm1gV6ezpozasUNsbVCQmRqmEz7Dv8hg57grB8fAKIEanPfN13SZ/QW00YP9DJhEF9h5BLASw2FFO0G5agI+FvoHkWz0LSY7Jkwc90FCQkJu/3tWr86+yhF28G/Qae4z9D36tzmPRRNu86VLl2SSWgBRirDuPVQpyckmna3QoYxef/3fNKBfPyoOICI6jjXdNQ7DGwq2GMonVws5fsP+xXKeycIMs8Rg/jllC6Q928OpD1NznSQ1MPAqjecp6KlSyFLToTnP1LxWfQ6uw2f8l6XSPu7Cz4WZAmHVbB3aDlMDgoXjuveG2eHIph34bvX9ddutCaxEwMOc8/W10dD7avVVTpuhux+lPiQy8XqYezAX8T5PMjLIGFQmFsDwKROVKjMpufLs0ffu1ZuKA7fYNp4z9ytKuJatGcy1uPDuYAxEuPM7l8hoPouu8Kgor4OmTyhUOg6d7qKO71J5+Qd0TQ0IdrKGgtK9N2xd/Bg6rgv1c3Sh7zpjk0WzzTlfmHQ9hNvSMW7oZbuCJmipOxqBh4oeFaiogQ78fuEP2d44WQaWuo+1n1EU7fyrwFS6BHPJrIgnPG0EHooDYAOiOBRugw2mQlnQADi0iUdFD3EcigOgtVIMLKuWgkL7fwJzzbp8n0OW0dC5KRC8Pqtta/DRmvb132klKMi7FLj8DadX8qgobENRA4MVy0yHQUfTgggMDJToLbCGI7RIWirJcOJIp4+PLzMUXcmbo68KDv7AHkfqxKo1a3KjlM8ilOaEgqDJXYpByOGYgIaytoDj/s8z761OEnJUOgjNlabhxFnqOZYAIsXjx4+jdhwJhuZGqgAcaoTdQ0O7MNPhTFOmTsvV6EikqsH8egWm9tTh/L8zzMpdcXF2KZYyKtB8mRZKvzQGTOBGjRpRIrM4CpYLJF2VK1fOUrytxREeHi4CjvbNmDWLTp48JcwLGLA6tWtz4ChJK7GtQYP6kv0IHn7fvr30d68ANTNBq3isO5So6eafWwMB/gESwEDYHFx0z+7dyaexj+wBYyjR31jRhDkw1SRDgKlL507yGYUmh3LyzYGbN2/Kjy6cHJ0k00+Vk0SVXyGEqUUTmseNvb8pBSX62mEuCpy7godh2Yam0M0ytDYQLKjODu9xjYxASwPvFNIpRHjcvfv285Jfhnp06yYJ/5u3bslzPsL+np6eIjDxHIWUaJ5nddagdeTzhYsX6NrVa3lShFHqhozFRBZCREyRdent5U21WfMi2xLmEXJg8gOEFVmIwI3rxlcaBL1qeNag6tWqyb/hoHp7exHECM68TGKNdqLQAunGaBPG/AqbQVeuXJEVVfe+NbkP8I4oGUTfId3DlfsuhqPAmkChSB2vulSxgofkysBXeGxixN1cFDh3BVPiFofTkQpQ1EIONGOHcN26dWSt2lQkmbXgZ2Cwzp49I1oPIXaktZYuU5pD49rMDsL5s6ZPE8Ec9v5wGjJkMAW1aCkFB+gfhOD38GSZM2dObiUMVEWroCAaOvg9+unn/9Gp06cl4cqbBx8RTCgQ5Lv8snQZLV+xwqiJhnvev5+dVtCdJyMS1gxV1GAyzpo5ncrm7AjQoF49+vLzz+UzkshGjR0rz0LPIo347YFvyUREmyDIySkpkqIwf36k5JuogckyauRI+TxpyhR6680BkrCWdC+JduUIOXYi+Pe//k9C95jgiMQ+5L5Bfsr3CxbSrt27Db5jYRWavZe3d4Q6Tzg/qO1wMCvd2Q4sCtNBFyjPQsJSYZxAdVhfH5DG2y08TCpkNm7aJFo2sFkzsW2vsEZGQpEmkBH54gsviJ8CRqaJrw/9yWbOst9/p2sJ16l+/XqSEegf4E/btm+n7DwhBdXz9hYzAxnWz/XuJamuP/3vf7R+wyZpWhNfX3kuUghOnDxp8F2yxE/JkHb7+fnx2JSSaqAMPWFxhNJxPt4JOfuw4VetXk0nT52Wog51ySHSoSd+9KE4tKtWr6GFHHzbzrEJV3ZkkRYdHBxM+w8cyN3dDP3ZvXs3ybvHaoSyO+TwxLJvsJuFFxME+fUvcT8hiIdo9dJlv4mDHNq5MwV37EDRMTFSmWQFRLGQ12chNz1BC6KBXJeePXpIglZRQ52rgRpAc2FIyPHNoHf/Q1WqVKGvv/1WqoOAJ08yqGOHDjzIriyE67WuUdorqU+f58SGR+75oCFDJVh1mZd1VNhs2rxZqMgarEWRzAQzRGjYqlUotFMnMR02btpMEydPFmG+FH+JonmC3bpzWzILIew7WQAeGDBd8BoX4i5I/BqVNgH+/lLOVqtWTakkwoqgXgnQbzD1wMCAajzLjueMGTPpENOjKB5Hu7BNx8czpksfDR8xQrIe0Q+ozsIkBTPTPLAZBQQEyAQBF4/gYDgrhrp16siuAB9GTKTv5s+nPTnaGZP/P28PlAQ2vOcVvhcyJlHmiCS7TiHBksyGiicrIMquoIsBzoZNdoJnf3HhlX/2Za3lb3FOADWXjX18xBZWZ9wByOyDsDRlAcIgaiIzKzPXjl344yK2v69q9ejtW7fpt9+Xy+eOrLEkp4V/0h5lZ2lgsNeuW6u1MwGEchMLPnKs4Vi2ZtPBEPBojAe07fARI2nv/v2S04061E9mf0xvDuhfoBW3HZsZEGRUQh05cjS3vdnPUrEGXiYaHCm+yJCUYzmeIcyzqB1RouXVziJWD2h5rCyr166RFUu9awB+UCANv6RePW8puraGEWq2UX2EB75TcMdiscuhzSeMG0NjJ3xIcaj7zCmrKixatQoS+hCpqnXr1iFNvx42N3hlVJRv2LBB7zYSBw8e1NsOpJRCiLH9BjSkOiMQuJGYSJcvX8lzDWx52OrYw8SXtfkvvy4lY8A9UZU0YsQoqs8UYa+ePZnnb0ev9O0rVOLsT0zb4iPAP3ujJ1TM63sX0JEoNkZfwLncz5NKsxOQT69pKsFeb8jmGiYiqqTgoGoCY+no4CjBLPhDd27fJkvD7PK34ydOZA98jmdf1EAp3dRJk+iHH3+k7ciVZnagsFSTOsLpx4P3OdNx+gBtjNxtfQ9Cf+hCshdZYDHw0MqwTzWFACVthoRPbaO6s5lkKpDFiHK8C3FxTCcepBEffMDKKJg2b95Ce/buzff6msymAJevXDZ4TsrDbOcb1UhPn5sN1LlqjgMcToyVPWv0nj26G8heVPHqib5TGB0/c8fXbDWM6nloGgQhigvYEWrYsKHUlpmPCR9+yMt8lln3Qee5sxZpyVoaVNpiZjyepD8mNaOL/9uzvf3uO++Qb+PGEi3Up30NAQMMZQLWI0+tpxEd45CzSqaasWUdJhLou5COB2SbDBQ65yfkECBMrFr8fu5u7vm2S59zmyfFh7/AqgQzBVHXmwY0dRabfdiPJT+YI+hmCzk40S1btharkAPYsgKrSVYhN0nq0KG98PA72VlasmSJdtGA/E8hlfEQ8qCWLfUKOZxLOFO6AwHtiCKCU6fP5OHL4bxjyX7Ik0u3IAIla8DpM+ZttAQmR81C2ZmwYOOUOF4BsL0FSuawf6Huu8Ber8lcO6DuA+26fG1gFUPmKHbWAgUJrl0X1g4tmr25EF4KmgGztLixfXtUobMEu4aGyu/oHdF5Cxso2+aNytlhF0yLPjOvd+/eeQYb2y1gmcb5oNN0jyM4g6Jh3WIJsCPYuwVmmLHkMENsKO6G1Qm+BUyE+CtPJ6X6/WCrazYI32LzJKAzMz9gPHR7FY5pdQ52obxvp9YGnvrFHJMXTBgmB6hWTF61M6vp1JqCgp6vhp25QRU8DC/6+/IVVJwAE7Jl61YqDMqzEwXtBRhb0jdsyt5cCNtvNGzUMM/xXizM73GAxzWHWq1UqZLsptWMWQhEE1evWZNnkBDpfH/IEOaLuwjnjtFo2rQpTZ86VRyxtRwTwGZGhoCcmk9mzxbGqXad2pL6ALu/RYvmNIODVPU54HOYhUxzE6D4HG2KjY7at+sg5pR63xe8PwI9mJxoAzZ5AsCSoFBmzKiR8oxPP/8id3dchcqw+OHbRT/9zCzSPYk/DOH+QeBKrfsh/NiFrHwF6xXgKAurAX9Z+iv14MEtZ+J2FJbGH3+sZP65cB45zA8glnlqUHqGgAgeHO4mTDMGsiCeOnlKS3999uUc6vf6vyXoAXsVtit+n+UA0seffqYR8XwKVPMjCDN2zGgaO26saFkHFiJw89gvMDIy0ugqhQANQu+I0sJn0ATqJEEpzvp4tlbpHvprAzuioRy0mTp5ony3hVepiIgIedbYceNpNAszNjia/83XwmvDrMIP/vLHkm+/E/4fyKUXyTBAv8JnGswC3rtXL9kR4QHHWlDw7MGriTxzwgQJwFkDhd6fHAGHhT/8SMM4nF3UmYkoZl7555+FNlWuX0+gTz77nIXxrFHHBt8vYD4atjeoP923BbWIfQth+lTjYA8q7xFJ3My+i6E9wZHzjd2udkTvYOamo2yRgW2kdzBjBA1urJYSiOfg0UAW7qCWQeTD/gLSauGeIIBz4OABg9FPpBnExZ2X0D6egb0o1UBEFIIeFNSSTaYWHOgqL04z/A04s+ogmRo4hl3NwKLc4SCWvv47FhtLgwYP4ZWjHTVrGiA+CoiCu0n3ZKeCWI3nWxqKruHdVKkmVtpoVuvnfkew/dxpBnvO2NahqIBUhGkcrdu8ZYtewczetMd4tb7muUQFs/fU12CwFjONWbGiB4X36KlFZRqbMIFsb3/OwRpsgTF46NA8SU8FbYfm80x9H832GepDyucczfN022HsuQU5Xx8KUq1f6F1ts2mn+/TF3LkSuSoqbOXQuXr3KJWBdpkKcxwaY46TKUu4paAVkdTzXX7X6vus796GztE8z9T3Luj5hYXZjqcuzrJdGblgQZEUNcBMWbBgYZEIkbWQ2/aitfCeSdhZqo8h3Ni4fcUff+RrRxYGCFbM4VXjes5uTOaiuGVLd8m2wXqwaOIJOPN5X39DSgdH6t2zh9Ym7boA9Yf9rG/eTCQ7ZhOwpViN6tWNXoPEoC+YwcBfZigpeMwh+VFjxki70woQM4hlmm7AwLdlf0Jr7ARgw1Mowrp1V5n618AUdqaZ8Ei97Nv3ZdkdVnMjUDiLG5m62r59u+wvjr37sD2xbEbvUoqdt0rUtnVrCu3ShYW+ttY9kbaK9FdQbiYLhYmOZ1GisPk1NmSjII6nVYRcDVSLo8LEs3pVCWnjL4Jh00lDHnquF8//8Kxeg8PadaUE6+Kli3ThfFzBhcMm5H9bFEjIe/V5PvPunTsmSW9BhbwooZc2K4FCboNlUAAhH690cXa+xTE+0/7AYwneiakgXLecY7ODnwko7exPKatUrbbr6tWrz5tyQUl2kArE59gE/JkAWx6Jbq6l19u1bh20QL13ng02/J1gr7T/dfXq1Q/tKnt4rG/cyCdGYbNRbfgbwd7ePrlsmTKR+GwXEhKS0S089M3WrYIukA02/MUBVe3o5Jhcy9vrjZUrV8rmMEKXhIWFnW7frl0Pv4CAWAcjf57aBhtKMmCNOJVyvlizVq1XFkdGLs/9XvOkiIgIpbu7e9iuvfsG3Lt7t01aWlpFdjZLLm9ogw2EUkH7JI6anyhXrsIi7zq1lsyaNUvrj2D9P0WFXC+BbdjyAAAAAElFTkSuQmCC"
+                            alt=""></a><a href="##" target="_blank" rel="noopener noreferrer"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAA8CAYAAAA60Bs3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAB4bSURBVHgB7X0JfFXVtf53z50yT0AGJgmEIYR5EAggkwjIZBWwtgWl1ae2WuvD//+p5VW0r+9ZoNY6opaqD8GCgspQo8g8z1NCEsIUICGQkHm+w3nr2zc3JpCE5CoyeL/f75B7zz3zWXvtb31r7Y0BNTBnzhxTfn7+mLSTJ39ZXFgUb3c4wmW1Bi+8uJFhQIGmaUcsFssifx+fj1euXFlU++cqvP7661127Nz194zM8/F2u80AL7y4CaFphuyg4OCZa1auXONeZ+Q/S5Ys6bJt+441J0+d6ul0Or0G7sVNC12Hf2Vl5cRePXunpqamJHOdgRTlwsWcA4ePHO4GL7y4RWDQtAtWX5+71iUkHNbatm079mjy0Th44cUtBN3pjLCVl0/nZ2NkVKuXsy5kxcILL24x6Loe07NH97e0izkX4+GFF7cmwvMKC8dqdputBbzw4haF0JZYzVZp8+rgXtzC0MyaDi+8uLXh9eJe3PLQPM38GAwadMPN0UYMBgN8/fxgNKrcl2TFNPj4+Kj1hNViUX8lLay2s1qt1ftyWz9Zx8W9vfuYoSEhCAoKql7P/c1ms/rM4/j6+qrnVBeMJpOc59trMJnM6hy+cl1u8Dq4zmwy13mMYDl3YGBg9Xcew31+o1y3+75+7DB27NRpTkVlZZN24our7DEcLXvEwlGYA3tpOW5ktGndGn98cQ5Tvkg9dgwd2rfH8889C8nwori4CE//7ils3bYd06f/AlPuvRe3394fLVu2RFraCfTo0Q2zZs1Cr149MWLECOzffwAVFRWYNm0qpkyZgmF3DIVTd+Ls2bOYOuU+da6sCxfwl/lzZd/uss9wXLyYjezs7FrX9OCM6fjJTybj0KHDKCsrw5T77sP906Zh4MABkHeCZEnWPfXUbzFkcDzuHDUKJSUlyMjIUPuy4T0o18rtRwwfBofTidOn0zF58iSMvnMUdu7ahfhBAzFw0CAkJibiR45Nnrli3wDkBMTidGA73PbATxE1vC+sAX64UTFs2B1ISUkVg7xDfffxsaJNmzb4qRgqPTo/E82ahWHzlq1YunSZGMudGDIkXnlKGtiCBQsQGRGBiIhw1QjiB8XjjdffwKrVq/GAPIOWUVEICQ5GaGiY8uD8u2DBu2LEhzBjxi8QEhJcfT1BwUHKmEOkJ+jcuZNaFxkZgd17duPtd97FHdJwmjdrpnqJf8q1bN22DSNHjqjuFXgfAwYMwNz5f8Eny5fjF7/4OZo3b44WLZpjpDREXl9wcIi6Di885uRG+MOJotxAHDpjQvOh8ej3mHixAXEwGG8sCsPuf+iQoVj00UdiSFHKUHWJthOTkpRHjBdvp+uu8Nvp1FFcVIRjx9Kwa/duxMbGqt+iIiPFkB9ATk6O8phDhgzGwUMHkZGZiW3SAxDR0dHKo5J9cB+RZtX269etR8cOMYqauHHH0KE4ejQZO7bvwJgxdynjdTgc6NK5M6ZOnYLU1GMoKCiEv78/hg4dgn79+qrz6NJjENzu67VrkZWVhR07dqJIrplG7pTzf/Lpp/j33/0OfmLgIp/BCxq5oemsnHs4hfuZxKDLiy1ITDahMjAIHScPRfyMSQht0xyeHPdaoHfv3ggNC8VTv30SBqEr/fv3V+s1MawF774nHnu0eD2XlyU/JqWh8UdIYzgnFIQoLi5GcnIyOgmNsFotKCosEj4eqn6jtwzwD8AFoSjuO+ZxjPJseJxmYnz5BQUold7AjaGDhyAmpgO6C52Ji4tDeIsWaluHw6kaxXzx0DRY0iIed/HiJdLDbKnev7SstLr3CQ0NVefNzc1V90QK9mVCAkaPvlNVK3khsYo8CTQVtF+zLA6NnsKMwkIdBw450buXCc26tMSwLvci51A6Dny5HSV5RbiemDxpojKSL1auxLixYzH+7nF457334OProzzhho0bMV26e8IqDffuceMU96YXXPvNOgwUWkAD3bRpM/pIg7lr9F344ouV+NN//RHPP/usoi+bN2/G8RMnMG7cWJSVu+KTIGn0bFhxXbuq8xVJQyHCxCjbtWuHB2fOVEb46l9fUXyfweWxtGM4mqwK5xAQEKCugXQnIyOz1j19I9c1f95cRWeaN2suPc9x4f0XVeBLg//wfxchPj4eVh8vXSEMY8aN04uLS5q0k9E/FCWDpos3dz9EA5xi+WF+ZYjvXYFgi0Femg3mcieS1x7EoU37oTt+eK9Cj9qxYwwyM88rb0zDadWqpfreTDjv6dOnRZEw4bbbbsMJMVJ6x2ZhYSoQTEs7rgLKYMWzQ5Ceflbxan9RO85JAMj1PXv0wKVLlyRITFGel7zcbreL585Hly5d5KkYcO7cOVwSL+tGQIA/IsIjcOLkSfW9rZyzXDw2PX9FRaXyyASVIAax56Uh0qNfDsYKbByXhBKlCL3h+UmriqVBuukLlZbz58/jxwzxIy+Kkd+tF1d5mcbCGBCK8vgZNYxcFyMXPirsJ9S3EgN62REufzWTHVZZ57hUgT1rduDUkdOorLDBCy9+KNDIPYoS6aGEQtZYxHML8yGvLCz3wd7DFhQ7rDA5hZvKtpZwI0ZOH44JD41Gs6hgeOHFDwljTMeOcyqbqJNrVonc2/WCQXikxmBNFqpbzCxxqbRrKBCeHhaiw9+sK/5uMDoRFhWIPrd3gX+ABYX5pSgrqYAXXlxjbDIZPFRXNIMOvUbliwGGWltcKrBgT6qGQbHFiPRzqu0lVIXmb0S/cV0R27899q9LwsGdaSgpun7JJN6/xWJ1cWIJGh03oewWKLFGfyawoloq+ZJxwjfr1qn4wAtRVzwS+sQwTEYJNo019tZrpLzVVx15xWbsTfbDwG4iyQlHp53rBgdPi+BIH4z5aT9079MOuzYcxaF9J+H8gYJTZjP79umNjjEdJYAMgk007YCAQEmh+0rQVowzZ86oxExi0lH1240MUsRICXh7dO+OSRMnqu//8exz193AGdB3jIlBbl6ekkGvJ4wdOzY9rW8SacrUnnTFouRE0hVjFW2pXjTX+vJKEy7mGtAy0o5AoSykNSZJJBkNwuHle7MIC3r2boPomEhknrmE4sJr59WpbNw/dRp+9cuZ0qCc2LRlMxISvsL2nbskFb5DpcDbtmmL8ePvxtgxYySJNFjk0QKlkDhvUM2ZnpuKjMVqlUzpHcrI3357QbWUeb3QvHkzvPXWmyoZt2vXblxHbDLBI+jyMHUxWL3Wutr41rMXVVqx+4gTQ7uVIlxUGIi8KP2A8uwG3QKj8Pa4XhGSbBmPDQkpWPvlYVSUfb8eNECyh8/Megbd4rrirQXvqAxiRUVtQ8jNzcMrr76KhK8S8OKcF9GhQwdl7DvlJdkdDtzY0N08EjdCc2QWlxlbq48V1xseqytGjQuqF3JuLjXXVf9m1HGhLAAbDgUi3+F6Cbr7Vega3A3Ez1+SN1PjMPfVKRg9Jk7x5O8DrMZ79a9/Rb++fTDnxZewfv36KwzcDXrGJEm5v/baa6rQ6b9f/jPKy2/sAjQvGoZHgyZIUZQBG79dTMLuudRc517MqkE4UGj3wYbEAOSW+ok1yQ/06oqj8ypo0CI4SgImMNSA6Q/3wEtPjEKf1mEweVwQ7Aosf/azB1Qa/auv16qalcaA6fE5c14SulIIL25umHRPuCa9ttILtequwNnw5uof/skt88W6RGB0Twda+UkSSRJGcrSqgNQBJzm7Q4OpsAJxEgTGxsdg89kCLE86i3NFpU0ux2A2c6IEZE45y6fLlzd6v3NVZa31wSTZxLCQELQIb4GQoGDkC3dnJjU/Px8NPVMGt82btZDgN1LVqrBEN0fUkIYCRTZxq3Bbd614TTC2KCm9esaa1ZassmwlQbfd7kD6mbPIy8tVmVIel9lVJgVZKFYzQ0uYpSdsIRnivPw8yQaXqzr6GMkkh0l2mNnV5OQUOVYeGgM6HWZrydnbSPxjMhlx8cJFHEtLq87sMrPMmiAWqZWWltZ5HJY0+Pv7qfNfLWPvISc3uGSZGg5Wa2DbKiuv/l5SGYAtyQaM7V6K5uLq7aYKWMUwyOMMotKYCsrhn5QNS7kDujyEu6ND0LtVAJYdzcK2ExeQX9F45YAVgyzQojF9XyluFkXd+5N7qtPuPhKIDxo0UGiZhtWr1+Czzz5TKk1N0JAYyLI2nIoDg8XevXqpoi/WlL/3978j7fjxWvsYxIm0ahmFPn36oLNsx/MFiwHwaZJClYhRrl+/AetkqQ8MRLt06Ywxd41RJcYMSAfePkBkUzM+X7kKy5YtU8fiAI1QOXaAGOCmzVtq368Y9fz5c7F9x07s3bsXjz/2mDTSKBWM875o4B+8/wFWrV6Dq+H+aVPlGdyJdtHtVJxDq7DIMdLTz2Du/HmqOrN/3354/vnnsOTjj+W5LKzzOI88/DAmThiP//8fz4oStqfBc3pk5LwwM626UZT5Sq9mF+pSUBqAb5IMGN61CC0DNDilIdiEu/vnlyMoKROWEjsq/TVYnA7Q14dLy35iYDuM7xqB5QczsD09B2W2qweD8fGDlPc4e/Ycvg9079ZNgtIXsEIM+U///TJsdleAvOijRZg9ezYeeuhB9OzRE/PmzVODJwgWTnFgBguz/vDCC8jOzlHrKbOxbv2J3/war7zyF8ybPx+baxjY0MGDVa34woULsWbNvxARHo4nf/sEBg4cKMZwFK+9/oYyjobAArPHH38Mc+fOw5GqARSs4XlRroMDLyxyDQvffx8Xs7NVeXCLFnVP3sA4bJCcd4wE4sulR9wpipRd7p09Jevpf/vkk0JNTaoQrqGejMHomXNn8P6HH4rTyVSNsGtsV/z68cdVwdvTs2Zh5+7dqiedOGEC/nfRR1fU7rAHuWPoEDWIZO++fbgaPGK7qpRU9jR5uPhQWzHbUVDmhy3HAlFUbpQHY4J/UQUCj2fBLA/bYNVhFdUFEpxrFqEvZlnnU4HoCCOeHhWN58bGolNkUIN8ncbFl8YXVFeRU1NBOez3v39eKEkBli77pNrACSoz88VIy6U77927F2bMmFE9tI3ea+zYsViy5ONqAydIUdauXSueeL104QF4SgyFvQTBYq9Z//409slL3L1nr6IRmdITzf3zPOU5WQA2adKkBq+XXfqTT/xGjWai5u8Gacm69etUIxskToCDPZhAKpD4g9WU9aFVq1ZYunQpPvjgQ6SkpOD48RNYt2493nnnPVTaKsVDj6wuW64Pi+UZvPTSf4m6tQ0nT55Sx/jXl1+Kse5V+QtSGFIQVl9ycMkQaeiXo3+/vureEr76StGtq0HzJONJ72xmsOnhwjkCzNKCzZodeWUWrEz0gyOjHCEnM+Brq4DmIxlSMXCDSYzcYlAG75R1Bn6W9SYWgbUPwJ9/Eot7bu9Qb+m6r69rDCWjgaAaYyE9xcRJExEeEYH9B/bXmSQiJ/9SXhi90/ARw1UDi4qKxLT7p6Fc1BxWK14OdtmkGyXCPZu1aI4pU+5T+3NoXbDQhPQz6bU8Y55w/pVCM1ilyBFENcejXo5x48YgSgwnMSmxesBFuPQGjzz8K4waOQoL3nmX03VXlwFfDfnSuP71ry+vWL9H6AIbEmvjaahu1OXR61Kq2NhTUlOhiXG4G8mKFZ8pOjRy1Iha2/LZjBcP75D7WS29W2PgGSdnssdoUIMQvqUj9TWWK2/UKYkgP6fQETFaizz7iIxiGL9YC99RETCE+cnvmnpALs1FjL1abnSdm2ucmjwsXfhgSVm9wWhpaZnygAQ54HcFqQ9vsyFJ8aB4II7X9PPzQfv20er8TELR+9fndTggg56UXTkHeVDyjOb1GhiEhV6x/bFjx9Rf8mE/X786eyk2Anp7VI1UIi8fK7ycQd36DRtVT0SP2RThgZSmorzuHpGefeiQIbitTRtFpRoCDZWcngNTAgODVPDpHgTidlinTp/GkSNHENc1TpUmX7joon4slaZS1pRg1wQPHDl3MRqYDHJWd8luT1FrO4N769rQdKoqPLkZ0VlnMCFhCQIKS5Ar0XvY5BiYWwcrjm6gilP9DqqGqInZ20R+3JhYhKXbM3A2uxj1NTB6W2Yr+TDJ4zp16qiGtjUE9+j8mufkiJsiieBbtWylboovpj6kn67yvLIdvabK0VQlRuobdc8CuZMnTqFt27ZqrKdNPFtpiUtV6Ne3r3DgFbV6DtINVaOSc6leL0wqQhVDGXjnLmrgBfkyua4npQp8z+Tsdb1n4tKlXJdyEhRYa5+aYKOcNnUKhg8bpt4J6SSvhY3UbK09swCv+/MvVuI/Z/9ejdFd9sknan3Pnj2U8sLhf42Fx9kWSohGo6G68tA1bMy1Tq2Xz7xJQ9Xv6kwq5a+LmsKiGQ3tcs7hzq8/g1+hQ4zZBFu2ARdWpcORV6E0d4NFvLmVNEUerEU8snDzM/k2PPtRCuZ9cQxnskuUV28IDJB0p66Md4JE4w2BBvXO22/hg38sVMua1auxZtUq4dfTlbdRcpY8fA7EqA9UL5Rn1V1D0opLitU+fMHhEfXPyFdQmO/aR4yF3Td5OkcGdZNAt49w/JogDaqsqMRHixer4K8u0HgowRH0fMdFuaF39LQWx+XxDfUOa+SwQPa99UmhtIWHf/VL/Nsjj6BQehAm5SZMmoyJk+/BlGn3iyL1+RX7bNq4STXkcWPHVE+3QZqVJ/HPtq3b0FhonuSAlSfXLksImVyLZnQt7u9cyKOt4vUtRqfi5AEOHe3PHscwkZwCRA93CH2p0HxEdTHBnq3j7IfJKM+olIBT+Lfo6E4x7vQC4KVPT+Hxtw/iSHrjEzQcKnaxqqtjbUe3uPqnYWek/sijj6mHvuDdd11ZWblZJpFoHPv271f1OK1btxJD71jnMVQdjzyQ8rIynBNF55hwzcpKm3rJfaUR1QejelBQWVaCI/SXLf1EvL8Js/9zNoYPH668H6e4eOD++/HCC3OwQWhHXVBjcKWBHBbqxFtQDaVPb3xXhISFuK6zjvO1adtGNQBOv1EXooW63SlKUpJQGRr4/gMHajUIxk+Xg/fw+eefo6U8bzog9sQxMTHqvpmPaCw0p+5Baanh8kETDS/Ue1nA5TDryghaZmWg/+adCBM9XMwYNs2ilkrNLIsFFSU+OLU0FbYsEwqcRizbnodn3j2KzYdzYGtiCQl525KP/6keGKeAeOzxR9XQt6bAZnMVsK1atVp50ECJ7Bnh1wUGXqQKe0RPZsIl83yW4qj0hBxjWtfL5PbR0e0UDVklPQdBCvOuaOdPz3pGepQ1GDx4EN5/f6EY9x/UNBjuxlCNOpzVrt17kCUN3GQ2qTllqEh8F0RERAqlan3Feg6169atu7p+97C+y0FlimpJpsiGl49EYy/buVPnOvfjrAlE17hY9JVnzrG56zesb5SqUn18eAi3x27MYtLIwc2wiEG3ky6z98at8MstFe9tgV28uE10Qi52tUi3p0vSojAIH318DLPfO4n3Vp5AXlHTKiVrghozByLT0OLiuuL/PTNLadaNVpaqDOiUpPqZPKGh3ycqSDdRE2oeg1nFeyZPVhMYvfnWW4q/8mW8/sabqnyXHP3RRx+tNbMV9x8l0ltrSfS8+eZbuCDZPzcYtB4+fFipIIsWLVZjQEl92CiugKGKA+su6ZRgiesXn3+hrpfKx4svvoBePXtWn5/GRfXH0siZtnj4mQ8+qPZxgxRigqgdLKulnMhpOOpCQUGBCnTbt2+vpEg3eC1TRUliMVxdyMzMVMrN4MHxaioPPscTx0+iKTDGdOzU5JFBVgmiWvToI3TCohQWLtplpbZQHF1XfJyTs/Fv1PkL6JWwGUGiNDg4YE6MoFLzVYOgYRCtXLasFA6UIhr6SoiWK1nDi/nfXd+moe3evUsyaxbFT2ngHM3uI/JbXl6+mjyopspAY2ExFwci0GiYwXTzW0pdhfLCmKkcNXIk5wZW629rext+OXMmHJK8+p+XX66lh7M3oTcn3RguQRSNnSoFg+HRkgGlkS9c+A9FreoDexNOSBQuSgOpUkVlBU6cOKnujc2MXLVrbBdFATh4gilvGkhiYpIEp0Xo0L4DOkS3F9ozTCWIhogSMmb0aJUSZ51OQ56RQTN5sZp2Q57NxPETJCkWh56SsX3ooRlqdoP09HS8/fbb1YoHE040Xg4I37Z9uzzjUjVhEhNZbGicxYzXQZ7et18fkQxXqIHZTIadOnW6xn3blbPg7GDMIVCivVqG8zJs8mggc7AEPl2mzxQ9u+4pDzh+wuhwdRN2Grv8jTx5Dl0S9iCgKA9W+c2mfTuWiHVaNglW85w27EQh9qIUZfr3X9rKLrObvBxOKzFgwO2q+2bWjPo2u1F6SgaYLMul0TM5QjVm/YYNtYyAHpDeqJMYGyUt1o9wLpRU2TYtLQ31OQ2qNjTEaDE2yopsXGwMTHzk1iGH0Sj44lu3bqOMliP7O4jHbC56OidBSvjqa1U7To/PRsf5D91NlZ6TU27wPni97aOjVc/DARYUBTiFxZ69+5RnvJqMyEb5t7++opJRb0hvM1gcBBNe1LTpnTk7GRM6Z6vmqSH4bH8t6X8WxK1e40r3s7FMEq/PMoWQ0BD1nDhLAlUfNo7pP/+5yhlcXkTHmpu//e1Vtf9zz/1eyZWNhRqtP/bu8TovtCmgkXd9kEZOfuk21doPyuTUxMCNYuB2NDuXja4rtsO/OF+CADNnNJLfxG87XSOIyiUo3W4Q43YUIF8MXfe86LBRoDfiZJktxUCjIqNgtphFHrOrF0bJUdWFiJJyvUpsSUdGjRyh9PY0yQhukEZGrsvgl/IZU/tD4gerZMkLf/iDmsfxWsJt5CwkY60Ip+xgEsosXJ+Nn0VbdTUUQ1Ua5fJfSOt4j659y67ayFg68MYbr+HgwYP44x//hKYwDxq5x8PfjFXSoJuSukfOuP2zLrTDLLcXlpGNTit2wVhSLrzbR1EXZ1XNVqV8OWYqxUbbRWQ5KqrVjGsNPlTOasWFBUE3GgYITfrdU08p+kKVp6TG7FtsiC//z5/x9NNPCc0ZJVnNca4p5HDtodWIPyiTXq1Uoj7bbYrzoENiZpeNe6NIik2l1oRHGU9NjQyCK+tZdeMGXVNemd7ZQWlReFSLUzlo8/l+MXDqxla5afHrBocy8DOmcqzXz+N0RfG3Ayi8UHhYtGQqUus3bqhl4G5w3euvv4nYLrGK+1ZNwIhbEYyfptx3L1KTU7Fzx054Ao8yntyH8yC6R+7oVf/S0Dm42Ue6obC0Cwj98gi0ItG5dV8OdhMP7kCuoQyJhnzst0uKGDf6kLLrA/J89jZWS/11KaQuzIqeEDqj32IGzkHZLElgbMTxtswU/3PpPxWF9AQmeGjlSjnRnFXflOCu6IdV9P3gE3kIXpOEgAKK/aKYaEzF23EU2dilZ6HI4bkc+GPA4cNH0FeCMxaEHZCgtKKO7r2zJEYYvDHgu9ZwqKnvCpRC8gOwSbQTDv6zB36qPjPYff/9D1TewVMYxoq6UtREdSU0Ihz9/20mjPyfFODy5BzZYxRPHpSSh4CEFATkUNN1oNLkQLZeiM3O08hyNu08P1YwQzl79vOqfpwTgC7/dAWSko7C7rCpjOPt/ftj7Ji7sFiSXDt27MC1BtUZyp2umQHy6q1f+b7g/l88+L9xUHf/Lj2Vx3MhhnEi+sdEXWEpq0ghnN1WE4MOPF6CoGVJMJU4hZsLNdFKsct5AmecebAZvHNlNxZ8yZQoRwwbJhpyP/XCaVjsrvnSadhbtm6rk697URtKXYGnMLgqER1CWzjnYUhqOcwrjgOlRqrcSDSdRZItA+UiIf4gfdwtBHouSpmLFi/Gx0uXqmpC1sNQzWiq3OvFd5hBy6xG7LMU1gy/tGI4VqZAExUlFZlI0zOQbSuAF98dzGA2tm7ai7rh8RhPFnqbRFyxJhfDvjwJuUWXkORMw0U9T3y3l5p4cePAwwk/OVOtaOJplbi0/BBSC5KQqV8QSdA797gXNx480slLi0tQdCAd5745irSCFPHc3tlTvbhxYTIZTeQWTSq5pZGvXb4MXnhxE8CmSfo4G154cYvCoCFZ8/f1u7YlbF54cb1gMFwoDwpK0Nq1a/uPOkeaeOHFTQ4JN5fuW726VLNarQnNwkIbP/TZCy9uAoiBF2nQ/87Pxo0bNzrvueee7bl5eXdXVlaGwgsvbn4UiZU/tHXz5k38wjEM2Lp1a87IESO+LikpGW6z28PhhRc3KcSDnxIP/qutW7asdK8zuj/s27cvZ8b06e+dz8za7XA6fHUdYZIn8oO38sSLGx+chGWf5Cf/pOuO34jTTqz54/8BxLTyu5ZuVk8AAAAASUVORK5CYII="
+                            alt=""></a></div><img
+                    class="hidden lg:block absolute lg:left-full lg:top-0 xl:top-1/2 z-10  lg:max-w-sm 2xl:max-w-none"
+                    src="./static/media/appSvg2.c14918ee760556e961b8.png" alt="">
+                <div class="block lg:hidden mt-10 max-w-2xl rounded-3xl overflow-hidden"><img
+                        src="./static/media/appRightImg.f5d741048b5794574f4c.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join newsletter section -->
+    <section class="container mx-auto mt-8p-8 py-14 md:px-14 lg:px-22">
+        <div class=" grid grid-cols-2 align-middle items-center gap-8">
+            <div class=mb-10 lg:mb-0 lg:mr-10 items-center">
+                <h2 class="font-semibold text-4xl">
+                    Join our newsletter 🎉
+                </h2>
+                <span class="block mt-5 text-neutral-500 dark:text-neutral-400">
+                    Read and share new perspectives on just about any topic. Everyone’s welcome.
+                </span>
+                <ul class="space-y-4 mt-10">
+                    <li class="flex items-center space-x-4">
+                        <span
+                            class="inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-blue-800 bg-blue-100  relative">
+                            01
+                        </span>
+                        <span class="font-medium text-neutral-700 dark:text-neutral-300">
+                            Get more discount
+                        </span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <span
+                            class="inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-red-800 bg-red-100  relative">
+                            02
+                        </span>
+                        <span class="font-medium text-neutral-700 dark:text-neutral-300">
+                            Get premium magazines
+                        </span>
+                    </li>
+                </ul>
+                <form class="mt-10 relative max-w-sm">
+                    <input type="email"
+                        class="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-5 bg-white border-2 rounded-full text-sm font-normal h-11 px-4 py-3 "
+                        required="" aria-required="true" placeholder="Enter your email">
+                    <button
+                        class="ttnc-ButtonCircle flex items-center justify-center rounded-full !leading-none disabled:bg-opacity-70 bg-cyan-500 hover:bg-cyan-600 text-neutral-50 absolute transform top-1/2 -translate-y-1/2 right-[5px]  w-9 h-9  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"
+                        type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <div>
+                    <img src="./images/news-letter.png" class="object-cover w-full h-full" alt="newsletter-imgs">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End of Join Newsletter section -->
+
 </body>
 
 </html>
