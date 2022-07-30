@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Carousel function
         const carousel = () => {
             return {
                 selected: 0,
@@ -19,7 +20,86 @@
                 ]
             };
         };
+
+        const carouselSlider = function () {
+            return {
+                container: null,
+                prev: null,
+                next: null,
+                init() {
+                    this.container = this.$refs.explore_slider_container
+
+                    this.update();
+
+                    this.container.addEventListener('scroll', this.update.bind(this), {
+                        passive: true
+                    });
+                },
+                update() {
+                    const rect = this.container.getBoundingClientRect();
+
+                    const visibleElements = Array.from(this.container.children).filter((child) => {
+                        const childRect = child.getBoundingClientRect()
+
+                        return childRect.left >= rect.left && childRect.right <= rect.right;
+                    });
+
+                    if (visibleElements.length > 0) {
+                        this.prev = this.getPrevElement(visibleElements);
+                        this.next = this.getNextElement(visibleElements);
+                    }
+                },
+                getPrevElement(list) {
+                    const sibling = list[0].previousElementSibling;
+
+                    if (sibling instanceof HTMLElement) {
+                        return sibling;
+                    }
+
+                    return null;
+                },
+                getNextElement(list) {
+                    const sibling = list[list.length - 1].nextElementSibling;
+
+                    if (sibling instanceof HTMLElement) {
+                        return sibling;
+                    }
+
+                    return null;
+                },
+                scrollTo(element) {
+                    const current = this.container;
+
+                    if (!current || !element) return;
+
+                    const nextScrollPosition =
+                        element.offsetLeft +
+                        element.getBoundingClientRect().width / 2 -
+                        current.getBoundingClientRect().width / 2;
+
+                    current.scroll({
+                        left: nextScrollPosition,
+                        behavior: 'smooth',
+                    });
+                }
+            };
+
+        };
     </script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .container-snap::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .container-snap {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
 </head>
 
 <body class=" theme-cyan-blueGrey">
@@ -1078,136 +1158,377 @@
 
         </div>
     </section>
-    <section class="container mx-auto mt-8p-8 py-14 md:px-14 lg:px-22">
-        <div class="nc-SectionSliderNewCategories ">
-            <div class="flow-root glide--ltr glide--slider glide--swipeable">
+    <section class="container mx-auto mt-8p-8 py-14">
+        <div class="">
+            <div x-data="carouselSlider()" x-init="init()" class="flow-root">
                 <div
                     class="relative flex flex-col sm:flex-row sm:items-end justify-between mb-12 lg:mb-16 text-neutral-900 dark:text-neutral-50">
                     <div class="max-w-2xl">
-                        <h2 class="text-3xl md:text-4xl font-semibold">Explore by types of stays</h2><span
-                            class="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">Explore
-                            houses based on 10 types of stays</span>
+                        <h2 class="text-3xl md:text-4xl font-semibold">Explore by types of stays</h2>
+                        <span
+                            class="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">
+                            Explore houses based on 10 types of stays
+                        </span>
                     </div>
                     <div class="mt-4 flex justify-end sm:ml-2 sm:mt-0 flex-shrink-0">
                         <div class="nc-NextPrev relative flex items-center text-neutral-900 dark:text-neutral-300 "
-                            data-nc-id="NextPrev" data-glide-el="controls"><button
+                            data-nc-id="NextPrev" data-glide-el="controls">
+                            <button @click="scrollTo(prev)"
                                 class="w-10 h-10 mr-[6px] bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
-                                title="Prev" data-glide-dir="<"><i class="las la-angle-left"></i></button><button
-                                class="w-10 h-10 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
-                                title="Next" data-glide-dir=">"><i class="las la-angle-right"></i></button></div>
+                                title="Prev" data-glide-dir="<">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <button @click="scrollTo(next)"
+                                class="w-10 h-10 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 focus:outline-none"
+                                title="Next" data-glide-dir=">">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides"
-                        style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 1574.4px; transform: translate3d(0px, 0px, 0px);">
-                        <li class="glide__slide glide__slide--active" style="width: 230.4px; margin-right: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                <div>
+                    <ul x-ref="explore_slider_container"
+                        class="flex flex-row overflow-auto hover:scroll-auto snap-x container-snap">
+                        <li class="mr-5 snap-center">
+                            <a class="flex flex-col" href="#">
+                                <div class=" relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                                            class=" rounded-2xl object-center" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
                                 </div>
                                 <div class="mt-4 px-3 truncate">
                                     <h2
                                         class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Nature House</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">17,288
-                                        properties</span>
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
                                 </div>
-                            </a></li>
-                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
-                                </div>
-                                <div class="mt-4 px-3 truncate">
-                                    <h2
-                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Wooden house</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">2,118
-                                        properties</span>
-                                </div>
-                            </a></li>
-                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class=" rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
                                 </div>
                                 <div class="mt-4 px-3 truncate">
                                     <h2
                                         class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Houseboat</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">36,612
-                                        properties</span>
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
                                 </div>
-                            </a></li>
-                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/248837/pexels-photo-248837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
-                                </div>
-                                <div class="mt-4 px-3 truncate">
-                                    <h2
-                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Farm House</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
-                                        properties</span>
-                                </div>
-                            </a></li>
-                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px; margin-right: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
                                 </div>
                                 <div class="mt-4 px-3 truncate">
                                     <h2
                                         class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Dome House</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
-                                        properties</span>
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
                                 </div>
-                            </a></li>
-                        <li class="glide__slide" style="width: 230.4px; margin-left: 16px;"><a
-                                class="nc-CardCategory5 flex flex-col " data-nc-id="CardCategory5"
-                                href="/chisfis/listing-stay">
-                                <div
-                                    class="flex-shrink-0 relative w-full aspect-w-4 aspect-h-3 h-0 rounded-2xl overflow-hidden group">
-                                    <div class=" "><img
-                                            src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs"></div><span
-                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/248837/pexels-photo-248837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
                                 </div>
                                 <div class="mt-4 px-3 truncate">
                                     <h2
                                         class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
-                                        Dome House</h2><span
-                                        class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">188,288
-                                        properties</span>
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
                                 </div>
-                            </a></li>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/248837/pexels-photo-248837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/248837/pexels-photo-248837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mr-5 snap-center">
+                            <a class=" flex flex-col " href="#">
+                                <div class="flex-shrink-0 aspect-full relative rounded-2xl overflow-hidden group">
+                                    <div class="md:w-64 md:h-48">
+                                        <img src="https://images.pexels.com/photos/2351649/pexels-photo-2351649.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+                                            class="object-cover w-full h-full rounded-2xl" alt="nc-imgs">
+                                    </div>
+                                    <span
+                                        class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity">
+                                    </span>
+                                </div>
+                                <div class="mt-4 px-3 truncate">
+                                    <h2
+                                        class="text-base sm:text-lg text-neutral-900 dark:text-neutral-100 font-medium truncate">
+                                        Nature House
+                                    </h2>
+                                    <span class="block mt-2 text-sm text-neutral-6000 dark:text-neutral-400">
+                                        17,288 properties
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1726,13 +2047,13 @@
                         </svg>
                     </button>
                 </form>
-            </div>
-            <div>
+                </di>
                 <div>
-                    <img src="./images/news-letter.png" class="object-cover w-full h-full" alt="newsletter-imgs">
+                    <div>
+                        <img src="./images/news-letter.png" class="object-cover w-full h-full" alt="newsletter-imgs">
+                    </div>
                 </div>
             </div>
-        </div>
 
     </section>
     <!-- End of Join Newsletter section -->
